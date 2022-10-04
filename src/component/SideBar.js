@@ -1,9 +1,27 @@
 import React from "react";
 import SidebarChat from "./SidebarChat";
 
+import { useEffect, useState } from "react";
+
 import "./SideBar.css";
 
 function SideBar() {
+  const [users, setUsers] = useState([]);
+  const [number, setNumber] = useState(1);
+
+  const getUserInfo = async () => {
+    const results = await fetch(`https://randomuser.me/api?page=${number}`);
+    const data = await results.json();
+    setUsers((prev) => {
+      return [...prev, ...data.results];
+    });
+    setNumber(data.info.page + 1);
+  };
+
+  useEffect(() => {
+    getUserInfo();
+  }, []);
+
   return (
     <div className="sidebar">
       <div className="sidebar_header">
@@ -34,12 +52,18 @@ function SideBar() {
           type="text"
           placeholder="Search in Chats"
         />
-        <button className="sidebar_newcharBtn">Start a new chat</button>
-        <SidebarChat />
-        <SidebarChat />
-        <SidebarChat />
-        <SidebarChat />
-        <SidebarChat />
+        <button
+          className="sidebar_newcharBtn"
+          onClick={() => {
+            getUserInfo();
+          }}
+        >
+          Start a new chat
+        </button>
+
+        {users.map((user, index) => {
+          return [<SidebarChat user={user} index={index} />];
+        })}
       </div>
     </div>
   );
