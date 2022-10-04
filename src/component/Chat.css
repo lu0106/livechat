@@ -1,0 +1,94 @@
+.chat {
+  display: block;
+  margin-left: 30%;
+}
+
+.chatHeader {
+  display: block;
+  position: relative;
+  height: 100px;
+  background-color: rgba(237, 233, 235, 0.996);
+}
+
+.chatIcon {
+  display: block;
+  float: left;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+}
+
+.chatUserName {
+  display: block;
+  float: left;
+  position: absolute;
+  left: 5rem;
+  top: -2rem;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.chatUserMail {
+  display: block;
+  float: left;
+  position: absolute;
+  left: 5rem;
+  top: 2.5rem;
+  font-size: 10px;
+  color: gray;
+}
+
+.chatBody {
+  display: block;
+  background-color: rgba(227, 249, 86, 0.5);
+  padding: 10px;
+}
+
+.chatTextSend {
+  display: block;
+  width: 40%;
+  left: 550px;
+  position: relative;
+  padding: 10px;
+  border: 1px solid rgb(46, 177, 138);
+  background-color: rgba(46, 177, 138, 0.2);
+  border-radius: 20px;
+}
+
+.chatTextGet {
+  display: block;
+  width: 40%;
+  left: 30px;
+  position: relative;
+  padding: 10px;
+  border: 1px solid rgb(46, 177, 138);
+  background-color: rgba(218, 219, 186, 0.1);
+  border-radius: 20px;
+}
+
+.chatFooter {
+  display: block;
+  margin-bottom: 80px;
+}
+
+.chatIcon2 {
+  display: block;
+  float: left;
+  width: 40px;
+  height: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.chatInput {
+  display: block;
+  float: left;
+  width: 80%;
+  height: 30px;
+  margin-top: 5px;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+}

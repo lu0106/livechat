@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import SideBar from "./component/SideBar";
+import Chat from "./component/Chat";
+
+import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [text, setText] = useState([
+    {
+      text: "this is a text from you",
+    },
+    {
+      text: "this is a text from you",
+    },
+    {
+      get: "this is a text from other",
+    },
+    {
+      text: "this is a text from you",
+    },
+    {
+      get: "this is a text from other",
+    },
+    {
+      get: "this is a text from other",
+    },
+  ]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SideBar />
+      <Chat text={text} setText={setText} />
     </div>
   );
 }
